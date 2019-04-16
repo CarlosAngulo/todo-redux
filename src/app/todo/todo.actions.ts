@@ -5,6 +5,7 @@ export const TOGGLE_TODO = '[TODO] Toggle todo';
 export const EDIT_TODO = '[TODO] Edit todo';
 export const DELETE_TODO = '[TODO] Delete todo';
 export const TOGGLE_ALL_TODO = '[TODO] Toggle all todo';
+export const DELETE_COMPLETED_TODO = '[TODO] Delete completed todos';
 
 export class AddTodoAction implements Action {
     readonly type = ADD_TODO;
@@ -31,4 +32,8 @@ export class ToggleAllTodoAction implements Action {
     constructor ( public completed: boolean){}
 }
 
-export type Actions = AddTodoAction | ToggleTodoAction | EditTodoAction | DeleteTodoAction | ToggleAllTodoAction;
+export class DeleteCompletedTodoAction implements Action {
+    readonly type = DELETE_COMPLETED_TODO;
+}
+
+export type Actions = AddTodoAction | ToggleTodoAction | EditTodoAction | DeleteTodoAction | ToggleAllTodoAction | DeleteCompletedTodoAction;
